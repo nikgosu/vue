@@ -30,7 +30,7 @@ const App = {
 	},
 	mounted () {
 		if (LS.getItem('notes') !== 'null') {
-			his.notes = JSON.parse(LS.getItem('notes'));
+			this.notes = JSON.parse(LS.getItem('notes'));
 		}
 	},
 	watch: {
