@@ -1,10 +1,12 @@
+let LS = localStorage;
+
 const App = {
 	data() {
 		return {
 			placeholderString: 'Введите название заметки',
 			title: 'Список заметок',
 			inputValue: '',
-			notes: ['2', '1'],
+			notes: [],
 		}
 	},
 	methods: {
@@ -14,7 +16,7 @@ const App = {
 				this.inputValue = '';
 			}
 		},
-		toUpperCase(item) {
+		toUpperCase (item) {
 			return item.toUpperCase();
 		},
 		deleteNote (idx) {
@@ -26,10 +28,21 @@ const App = {
 			return this.notes.length * 2;
 		},
 	},
+	mounted () {
+		this.notes = JSON.parse(LS.getItem('notes'));
+		console.log(123)
+	},
 	watch: {
 		inputValue(value) {
 			if (value.length > 100) {
 				this.inputValue = '';
+			}
+		},
+		'notes.length': {
+			handler (newValue, oldValue) {
+				if (newValue !== oldValue) {
+					LS.setItem('notes', JSON.stringify(this.notes))
+				}
 			}
 		}
 	}
