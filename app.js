@@ -30,7 +30,6 @@ const App = {
 	},
 	mounted () {
 		this.notes = JSON.parse(LS.getItem('notes'));
-		console.log(123)
 	},
 	watch: {
 		inputValue(value) {
