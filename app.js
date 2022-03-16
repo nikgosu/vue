@@ -6,7 +6,7 @@ const App = {
 			placeholderString: 'Введите название заметки',
 			title: 'Список заметок',
 			inputValue: '',
-			notes: ['Первая заметка'],
+			notes: [],
 		}
 	},
 	methods: {
@@ -29,7 +29,9 @@ const App = {
 		},
 	},
 	mounted () {
-		this.notes = JSON.parse(LS.getItem('notes'));
+		if (LS.getItem('notes') !== 'null') {
+			his.notes = JSON.parse(LS.getItem('notes'));
+		}
 	},
 	watch: {
 		inputValue(value) {
@@ -40,7 +42,7 @@ const App = {
 		'notes.length': {
 			handler (newValue, oldValue) {
 				if (newValue !== oldValue) {
-					LS.setItem('notes', JSON.stringify(this.notes))
+					LS.setItem('notes', JSON.stringify(this.notes));
 				} if (newValue === 0) {
 					LS.setItem('notes', '')
 				}
