@@ -6,7 +6,7 @@ const App = {
 			placeholderString: 'Введите название заметки',
 			title: 'Список заметок',
 			inputValue: '',
-			notes: [],
+			notes: [''],
 		}
 	},
 	methods: {
@@ -42,6 +42,8 @@ const App = {
 			handler (newValue, oldValue) {
 				if (newValue !== oldValue) {
 					LS.setItem('notes', JSON.stringify(this.notes))
+				} if (newValue === 0) {
+					LS.setItem('notes', '')
 				}
 			}
 		}
