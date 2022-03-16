@@ -29,6 +29,7 @@ const App = {
 		},
 	},
 	mounted () {
+		LS.setItem('notes', JSON.stringify(this.notes))
 		if (LS.getItem('notes') !== 'null') {
 			this.notes = JSON.parse(LS.getItem('notes'));
 		}
