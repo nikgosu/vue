@@ -394,3 +394,9 @@ h3 {
 .navbar-menu li a:hover, .navbar-menu li a.active {
 	border-bottom: 2px solid #3eaf7c;
 }
+
+@media (min-width: 800px) {
+        .list-item{
+                max-width: 700px;
+        }
+}
