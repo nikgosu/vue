@@ -45,8 +45,6 @@ const App = {
 			handler (newValue, oldValue) {
 				if (newValue !== oldValue) {
 					LS.setItem('notes', JSON.stringify(this.notes));
-				} if (newValue === 0) {
-					LS.setItem('notes', '')
 				}
 			}
 		}
