@@ -398,5 +398,6 @@ h3 {
 @media (max-width: 700px) {
 	.list-item{
 		min-width: 650px;
+		max-width: 670px;
 	}
 }
