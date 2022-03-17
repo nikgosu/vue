@@ -396,8 +396,9 @@ h3 {
 }
 
 @media (max-width: 700px) {
-	.list-item{
-		min-width: 650px;
-		max-width: 670px;
+	.list-item span{
+		flex-wrap: wrap;
+		min-width: 560px;
+		max-width: 600px;
 	}
 }
