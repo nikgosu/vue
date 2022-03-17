@@ -395,8 +395,8 @@ h3 {
 	border-bottom: 2px solid #3eaf7c;
 }
 
-@media (min-width: 800px) {
-        .list-item{
-                max-width: 700px;
-        }
+@media (max-width: 700px) {
+	.list-item{
+		min-width: 650px;
+	}
 }
