@@ -395,10 +395,3 @@ h3 {
 	border-bottom: 2px solid #3eaf7c;
 }
 
-@media (max-width: 700px) {
-	.list-item span{
-		flex-wrap: wrap;
-		min-width: 560px;
-		max-width: 600px;
-	}
-}
